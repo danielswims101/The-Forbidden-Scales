@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Forbidden Scales — Official Records Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --night: #0a0c14;
+  --deep: #111627;
+  --card: #14192e;
+  --card-hover: #18203a;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --gold-dim: #7a6030;
+  --teal: #3dd6c0;
+  --text: #e8e0d0;
+  --text-dim: #7a7060;
+  --text-mid: #b8ae98;
+  --border: rgba(201,168,76,0.18);
+  --border-bright: rgba(201,168,76,0.45);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--night);
+  background-image:
+    radial-gradient(1px 1px at 8% 12%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 38%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 7%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 18%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 52%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 86% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 4% 68%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 82%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 72%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 31% 60%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 88%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 16% 88%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 45%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 55%, rgba(255,255,255,0.2) 0%, transparent 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* ===================== NAV ===================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(10,12,20,0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--border);
+  padding: 0.9rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--text-mid);
+  text-decoration: none;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold-light); }
+
+/* ===================== HERO ===================== */
+.hero {
+  text-align: center;
+  padding: 8rem 2rem 7rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+  margin-bottom: 1.75rem;
+}
+
+.hero h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  color: var(--gold-light);
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 0 60px rgba(201,168,76,0.25);
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-mid);
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-lore {
+  font-size: 14px;
+  color: var(--text-dim);
+  max-width: 540px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.hero-rule {
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 3rem;
+}
+
+.hero-nav-pills {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-pill {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1.1rem;
+  border: 0.5px solid var(--border-bright);
+  border-radius: 30px;
+  color: var(--gold);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero-pill:hover { background: rgba(201,168,76,0.12); color: var(--gold-light); }
+
+/* ===================== SECTIONS ===================== */
+.divider {
+  width: 100%;
+  height: 0.5px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: var(--border-bright);
+}
+
+.section-intro {
+  font-size: 15px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 2.75rem;
+  max-width: 680px;
+  line-height: 1.8;
+}
+
+/* ===================== DRAGON CARDS ===================== */
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+
+.dragon-card {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+  transition: border-color 0.25s, transform 0.25s, background 0.25s;
+}
+
+.dragon-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-3px);
+  background: var(--card-hover);
+}
+
+.dragon-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 16px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.dragon-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.dragon-subtitle { font-size: 12px; color: var(--text-dim); letter-spacing: 0.08em; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin: 0.75rem 0; }
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.dragon-body { font-size: 14.5px; color: var(--text-mid); line-height: 1.7; margin-top: 0.75rem; }
+.dragon-body strong { color: var(--text); font-weight: 600; }
+
+.card-rule { height: 0.5px; background: var(--border); margin: 1rem 0; }
+
+/* Avatar colors */
+.av-agate   { background: rgba(201,168,76,0.15);  color: #c9a84c; }
+.av-topaz   { background: rgba(201,130,76,0.15);  color: #d4945a; }
+.av-talon   { background: rgba(85,147,235,0.15);  color: #5593eb; }
+.av-ash     { background: rgba(143,119,221,0.15); color: #b3a0ee; }
+.av-twilight{ background: rgba(212,83,126,0.15);  color: #e8a0be; }
+
+/* Tag colors */
+.tag-wind    { background: rgba(61,214,192,0.12);  color: #3dd6c0; border: 0.5px solid rgba(61,214,192,0.3); }
+.tag-shard   { background: rgba(133,183,235,0.12); color: #85b7eb; border: 0.5px solid rgba(133,183,235,0.3); }
+.tag-moon    { background: rgba(143,119,221,0.12); color: #b3a0ee; border: 0.5px solid rgba(143,119,221,0.3); }
+.tag-galaxy  { background: rgba(212,83,126,0.12);  color: #e8a0be; border: 0.5px solid rgba(212,83,126,0.3); }
+.tag-gold    { background: rgba(201,168,76,0.12);  color: #c9a84c; border: 0.5px solid rgba(201,168,76,0.3); }
+.tag-neutral { background: rgba(255,255,255,0.05); color: #8a8070; border: 0.5px solid rgba(255,255,255,0.1); }
+
+/* ===================== EXCERPTS ===================== */
+.excerpt-box {
+  background: var(--card);
+  border-left: 3px solid var(--gold);
+  border-top: 0.5px solid var(--border);
+  border-right: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  border-radius: 0 10px 10px 0;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.excerpt-label {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold-dim);
+  margin-bottom: 0.75rem;
+}
+
+.excerpt-text { font-style: italic; color: var(--text-mid); font-size: 15.5px; line-height: 1.8; }
+
+/* ===================== SHARDS ===================== */
+.shard-card {
+  border-radius: 14px;
+  padding: 1.75rem;
+  border: 0.5px solid;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.shard-card:hover { transform: translateY(-3px); }
+
+.shard-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+
+.shard-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.15rem;
+}
+
+.shard-domain { font-size: 11px; letter-spacing: 0.12em; opacity: 0.65; }
+.shard-rule { height: 0.5px; margin: 1rem 0; opacity: 0.35; }
+.shard-section-label { font-family: 'Cinzel Decorative', serif; font-size: 10px; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 0.4rem; }
+.shard-body { font-size: 14.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+.shard-body strong { font-weight: 600; }
+
+/* Shard color themes */
+.s-flame { background: rgba(216,90,48,.1);  border-color: rgba(216,90,48,.35); }
+.s-flame .shard-icon-circle { background: rgba(216,90,48,.15); border-color: rgba(216,90,48,.4); color: #f09575; }
+.s-flame .shard-name { color: #f09575; } .s-flame .shard-rule { background: #f09575; }
+.s-flame .shard-body strong { color: #f09575; }
+
+.s-sea   { background: rgba(55,138,221,.1); border-color: rgba(55,138,221,.35); }
+.s-sea .shard-icon-circle { background: rgba(55,138,221,.15); border-color: rgba(55,138,221,.4); color: #85b7eb; }
+.s-sea .shard-name { color: #85b7eb; } .s-sea .shard-rule { background: #85b7eb; }
+.s-sea .shard-body strong { color: #85b7eb; }
+
+.s-moon  { background: rgba(127,119,221,.1); border-color: rgba(127,119,221,.35); }
+.s-moon .shard-icon-circle { background: rgba(127,119,221,.15); border-color: rgba(127,119,221,.4); color: #b3a0ee; }
+.s-moon .shard-name { color: #b3a0ee; } .s-moon .shard-rule { background: #b3a0ee; }
+.s-moon .shard-body strong { color: #b3a0ee; }
+
+.s-crystal { background: rgba(61,214,192,.08); border-color: rgba(61,214,192,.3); }
+.s-crystal .shard-icon-circle { background: rgba(61,214,192,.15); border-color: rgba(61,214,192,.4); color: #3dd6c0; }
+.s-crystal .shard-name { color: #3dd6c0; } .s-crystal .shard-rule { background: #3dd6c0; }
+.s-crystal .shard-body strong { color: #3dd6c0; }
+
+.s-wind  { background: rgba(201,168,76,.07); border-color: rgba(201,168,76,.28); }
+.s-wind .shard-icon-circle { background: rgba(201,168,76,.15); border-color: rgba(201,168,76,.4); color: #e8c96a; }
+.s-wind .shard-name { color: #e8c96a; } .s-wind .shard-rule { background: #e8c96a; }
+.s-wind .shard-body strong { color: #e8c96a; }
+
+.s-sun   { background: rgba(239,159,39,.08); border-color: rgba(239,159,39,.3); }
+.s-sun .shard-icon-circle { background: rgba(239,159,39,.15); border-color: rgba(239,159,39,.4); color: #fac775; }
+.s-sun .shard-name { color: #fac775; } .s-sun .shard-rule { background: #fac775; }
+.s-sun .shard-body strong { color: #fac775; }
+
+.s-galaxy { background: rgba(100,70,200,.1); border-color: rgba(180,140,255,.35); }
+.s-galaxy .shard-icon-circle { background: rgba(100,70,200,.18); border-color: rgba(180,140,255,.4); color: #cbb8ff; }
+.s-galaxy .shard-name { color: #cbb8ff; } .s-galaxy .shard-rule { background: #cbb8ff; }
+.s-galaxy .shard-body strong { color: #cbb8ff; }
+
+/* ===================== BALANCE SECTION ===================== */
+.balance-pair {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.25s;
+}
+
+.balance-pair:hover { border-color: var(--border-bright); }
+
+.balance-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.balance-vs {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  padding: 0.2rem 0.6rem;
+  border: 0.5px solid var(--border);
+  border-radius: 20px;
+}
+
+.balance-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+}
+
+.balance-body { font-size: 14.5px; color: var(--text-mid); line-height: 1.75; }
+.balance-body strong { font-weight: 600; }
+
+.balance-lore {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 0.5px solid var(--border);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ===================== WOLF CARDS ===================== */
+.wolf-card {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+.wolf-card:hover { border-color: rgba(143,119,221,0.4); }
+.wolf-name { font-family: 'Cinzel Decorative', serif; font-size: 13px; color: #b3a0ee; margin-bottom: 0.2rem; }
+.wolf-role { display: inline-block; font-size: 10px; padding: 2px 9px; border-radius: 20px; background: rgba(143,119,221,0.1); color: #b3a0ee; border: 0.5px solid rgba(143,119,221,0.3); margin-bottom: 0.75rem; letter-spacing: 0.08em; }
+.wolf-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.6; }
+
+/* ===================== TEAM ===================== */
+.team-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+.team-card:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.team-avatar { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 0.85rem; background: rgba(201,168,76,0.1); border: 1px solid var(--border-bright); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel Decorative', serif; font-size: 18px; color: var(--gold); }
+.team-name { font-family: 'Cinzel Decorative', serif; font-size: 11px; color: var(--gold-light); margin-bottom: 0.35rem; }
+.team-role { font-size: 12.5px; color: var(--text-dim); line-height: 1.5; }
+
+/* ===================== CONTACT ===================== */
+.contact-block { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+.contact-row { display: flex; align-items: center; gap: 1.1rem; padding: 1rem 1.5rem; border-bottom: 0.5px solid var(--border); }
+.contact-row:last-child { border-bottom: none; }
+.contact-init { width: 38px; height: 38px; border-radius: 50%; background: rgba(201,168,76,0.1); border: 0.5px solid var(--border-bright); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel Decorative', serif; font-size: 13px; color: var(--gold); flex-shrink: 0; }
+.contact-name { font-family: 'Cinzel Decorative', serif; font-size: 11px; color: var(--gold-light); margin-bottom: 0.15rem; }
+.contact-detail { font-size: 13px; color: var(--text-dim); }
+
+/* ===================== PET CARDS ===================== */
+.pet-card { background: var(--card); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+.pet-name { font-family: 'Cinzel Decorative', serif; font-size: 12px; color: var(--teal); margin-bottom: 0.2rem; }
+.pet-owner { font-size: 11px; color: var(--text-dim); margin-bottom: 0.6rem; letter-spacing: 0.08em; }
+.pet-desc { font-size: 13.5px; color: var(--text-mid); line-height: 1.6; }
+
+/* ===================== LORE BOXES ===================== */
+.lore-box { background: var(--card); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.lore-label { font-family: 'Cinzel Decorative', serif; font-size: 10px; letter-spacing: 0.18em; color: var(--gold-dim); margin-bottom: 0.75rem; }
+.order-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; }
+.order-pill { font-family: 'Cinzel Decorative', serif; font-size: 10px; padding: 0.3rem 0.75rem; border-radius: 20px; background: rgba(201,168,76,0.09); border: 0.5px solid var(--border-bright); color: var(--gold); }
+.order-arrow { color: var(--text-dim); font-size: 11px; }
+.book-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.book-pill { font-size: 12px; padding: 0.25rem 0.75rem; border-radius: 6px; background: rgba(61,214,192,0.07); border: 0.5px solid rgba(61,214,192,0.22); color: #3dd6c0; }
+.rules-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.rules-list li { display: flex; gap: 0.65rem; font-size: 14.5px; color: var(--text-mid); align-items: flex-start; }
+.rules-list li::before { content: '⚔'; color: var(--gold-dim); flex-shrink: 0; margin-top: 2px; }
+
+/* ===================== FOOTER ===================== */
+footer { border-top: 0.5px solid var(--border); text-align: center; padding: 2.5rem 2rem; color: var(--text-dim); font-family: 'Cinzel Decorative', serif; font-size: 10px; letter-spacing: 0.15em; line-height: 2; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 600px) {
+  nav { padding: 0.75rem 1rem; }
+  .nav-links { gap: 0.9rem; }
+  .section { padding: 3rem 1.25rem; }
+  .hero { padding: 5rem 1.25rem 4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">The Forbidden Scales</div>
+  <ul class="nav-links">
+    <li><a href="#dragons">Dragons</a></li>
+    <li><a href="#shards">Shards</a></li>
+    <li><a href="#balance">Balance</a></li>
+    <li><a href="#excerpts">Excerpts</a></li>
+    <li><a href="#wolves">Wolf Pack</a></li>
+    <li><a href="#companions">Companions</a></li>
+    <li><a href="#lore">Lore</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Official Records Site · Maintained by Elina, Daniel, Raven & Varsha</p>
+  <h1>The Forbidden<br>Scales</h1>
+  <p class="hero-tagline">An epic dragon saga of loyalty, ancient power, and the bonds forged between unlikely companions</p>
+  <p class="hero-lore">In a world where dragon bloodlines determine destiny, five young dragons and their companions must navigate war, loyalty, and power greater than any of them understand. The Scales are many. The forbidden ones are few — and the most dangerous of all.</p>
+  <div class="hero-rule"></div>
+  <div class="hero-nav-pills">
+    <a href="#dragons" class="hero-pill">Dragon Records</a>
+    <a href="#shards" class="hero-pill">The Shards</a>
+    <a href="#balance" class="hero-pill">The Balance</a>
+    <a href="#wolves" class="hero-pill">Wolf Pack</a>
+    <a href="#team" class="hero-pill">The Authors</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DRAGON RECORDS -->
+<section class="section" id="dragons">
+  <div class="section-title">Dragon Records</div>
+  <p class="section-intro">The five main dragons of the series — each written by a different author, each carrying the weight of their tribe, their power, and their story.</p>
+
+  <div class="grid-2">
+
+    <!-- AGATE -->
+    <div class="dragon-card">
+      <div class="dragon-header">
+        <div class="avatar av-agate">A</div>
+        <div>
+          <div class="dragon-name" style="color:#c9a84c">Agate</div>
+          <div class="dragon-subtitle">WindScale · Queen's Regent · Written by Elina</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-wind">WindScale</span>
+        <span class="tag tag-gold">Pescatarian</span>
+        <span class="tag tag-neutral">Photographic Memory</span>
+        <span class="tag tag-gold">Queen's Regent</span>
+      </div>
+      <div class="card-rule"></div>
+      <div class="dragon-body">
+        <strong>Appearance:</strong> Amber eyes with glittering gold flecks in her irises. Her scales are a rich blend of tangerine orange and amber-gold, with lighter clementine wings and a faint apricot underbelly. Waves of gold scales shimmer down her spine and forearms, finished with gleaming golden claws.<br><br>
+        <strong>Power:</strong> During extreme emotions — joy, grief, rage — Agate produces uncontrolled energy outbursts that command the wind around her. As she grows, she learns to channel this force deliberately, turning storms into shields and gales into weapons.<br><br>
+        <strong>Personality Arc:</strong> She begins nervous, overthinking every step, hiding cleverness behind politeness. Over time she becomes funny, outgoing, calm under pressure — the kind of leader others follow without being asked. Her photographic memory makes her invaluable, but it also means she never forgets a wound.<br><br>
+        <strong>Role:</strong> Acts as the Queen's regent — a position that grants her power and chains her equally. Her loyalty to those she loves is her greatest strength and her most dangerous vulnerability.
+      </div>
+    </div>
+
+    <!-- TOPAZ -->
+    <div class="dragon-card">
+      <div class="dragon-header">
+        <div class="avatar av-topaz">T</div>
+        <div>
+          <div class="dragon-name" style="color:#d4945a">Topaz</div>
+          <div class="dragon-subtitle">WindScale · Prince · Written by Daniel</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-wind">WindScale</span>
+        <span class="tag tag-gold">Prince</span>
+        <span class="tag" style="background:rgba(216,90,48,.1);color:#f09575;border:0.5px solid rgba(216,90,48,.3)">Snot Wind</span>
+      </div>
+      <div class="card-rule"></div>
+      <div class="dragon-body">
+        <strong>Appearance:</strong> Deep tangerine scales shot through with dark gold flecks. Golden-brown eyes with a sharp intelligence that misses nothing. A winding golden tail-band shaped like a coiled snake, a whip-thin tail, claws sharp as obsidian, teeth like steel blades — and a scar carved into the thick of his tail from a fight he refuses to speak of.<br><br>
+        <strong>Power:</strong> Can blast concentrated wind from his snout — officially recorded as Snot Wind by the author and <em>non-negotiable</em> under pain of Daniel quitting TFS entirely. Despite the undignified name, the ability is genuinely devastating in battle at close range.<br><br>
+        <strong>Personality:</strong> Bitter and haughty on the surface, protective and quietly loyal beneath. He has zero patience for disrespect directed at those he cares about, and moon eyes for Agate that he would never, ever admit to. His arrogance is partly armour — a prince who trusted too easily and learned not to.<br><br>
+        <strong>Bond:</strong> His wolf Fang is his closest companion — they share a silent, instinctive understanding that bypasses language. Topaz will never say he needs anyone. Fang knows anyway.
+      </div>
+    </div>
+
+    <!-- TALON -->
+    <div class="dragon-card">
+      <div class="dragon-header">
+        <div class="avatar av-talon">T</div>
+        <div>
+          <div class="dragon-name" style="color:#5593eb">Talon</div>
+          <div class="dragon-subtitle">ShardScale · Servant of Ky · Written by Raven</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-shard">ShardScale</span>
+        <span class="tag tag-neutral">Vegan</span>
+        <span class="tag tag-neutral">No Power</span>
+      </div>
+      <div class="card-rule"></div>
+      <div class="dragon-body">
+        <strong>Appearance:</strong> Small and scrawny — easily overlooked, which is exactly how he prefers it. Light icy-blue scales, dark blue dots scattered across the underside of his wings, electric blue eyes that are sharper than they seem. A small pouch hangs around his neck — what's inside is his secret alone.<br><br>
+        <strong>Power:</strong> None. In a world defined by elemental power, Talon has nothing. He has survived entirely through wit, loyalty, and sheer stubbornness — which arguably makes him more dangerous than a dragon with every ability in the world.<br><br>
+        <strong>Personality:</strong> Profoundly shy with everyone except the people he loves. Fiercely protective of Dyno, of Saiber, and most of all of Ky — whom he regards as a brother rather than a master. He does not fight because he wants glory. He fights because losing the people he loves is not something he's willing to experience again.<br><br>
+        <strong>History:</strong> After his parents and sister were taken from him just after hatching, Talon was forced to prove his worth to survive. He did. He found Aquamarine. He found Ky. And he decided that family is chosen, not born.
+      </div>
+    </div>
+
+    <!-- ASH -->
+    <div class="dragon-card">
+      <div class="dragon-header">
+        <div class="avatar av-ash">A</div>
+        <div>
+          <div class="dragon-name" style="color:#b3a0ee">Ash</div>
+          <div class="dragon-subtitle">MoonScale · Royalty · Written by Varsha</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-moon">MoonScale</span>
+        <span class="tag tag-gold">Royalty</span>
+        <span class="tag tag-neutral">Night-Powered</span>
+      </div>
+      <div class="card-rule"></div>
+      <div class="dragon-body">
+        <strong>Appearance:</strong> Black and navy-blue scales that blend seamlessly into shadow, with tiny silver stars scattered across her wings like a section of real sky peeled free. Blue eyes that seem to hold depth beyond their surface. In darkness, she is nearly invisible. In moonlight, she is breathtaking.<br><br>
+        <strong>Power:</strong> Draws power directly from the moon — which means she is strongest at night and grows weaker under heavy sunlight. Her abilities are moonlight-type: subtle, vast, and difficult to counter. She can perceive things others cannot, especially in darkness.<br><br>
+        <strong>Personality:</strong> Uneasy and guarded when you first meet her — she has learned caution through experience, not paranoia. Get past that wall and you find someone fun, intensely hardworking, and fiercely smart. She says little and misses nothing.<br><br>
+        <strong>Bond:</strong> Storm, her wolf companion, is the only being on earth that Ash fully trusts. They can understand each other across a distance neither of them can explain. Ash's plans and Storm's instincts have never once conflicted.
+      </div>
+    </div>
+
+    <!-- TWILIGHT -->
+    <div class="dragon-card">
+      <div class="dragon-header">
+        <div class="avatar av-twilight">Tw</div>
+        <div>
+          <div class="dragon-name" style="color:#e8a0be">Twilight</div>
+          <div class="dragon-subtitle">GalaxyScale · "Twiy" · Written by the team</div>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag tag-galaxy">GalaxyScale</span>
+        <span class="tag" style="background:rgba(212,83,126,.1);color:#e8a0be;border:0.5px solid rgba(212,83,126,.3)">Wanted</span>
+        <span class="tag tag-neutral">Dual Domain</span>
+      </div>
+      <div class="card-rule"></div>
+      <div class="dragon-body">
+        <strong>Appearance:</strong> Pink and purple scales that shift and catch light like the inside of a shell — depending on the angle she looks entirely different. A dab of royal blue on her tail. Rose-gold claws. And her eyes: look closely and you'll see what appears to be a birthmark in the shape of a star, a constellation of sorts living in her iris.<br><br>
+        <strong>Power:</strong> Draws from the galaxy and stars themselves — light and dark in equal measure. During extreme emotions, she releases uncontrolled blasts of raw power and energy. As a GalaxyScale, she is one of the most dangerous dragons alive, and one of the rarest. Someone is hunting for her.<br><br>
+        <strong>Personality:</strong> Kind, adventurous, recklessly clumsy, and absolutely refuses to stop being honest even when it causes problems. She is funny and generous and says the quiet parts loud. Her recklessness is not carelessness — it's the belief, deep in her bones, that the world is worth running into headfirst.<br><br>
+        <strong>Status:</strong> Currently wanted by an unknown faction. The reason is not yet recorded in the official files.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE SHARDS -->
+<section class="section" id="shards">
+  <div class="section-title">The Shards</div>
+  <p class="section-intro">The most powerful dragon bloodlines in recorded history. Each Shard commands total dominion over a fundamental force of the world. To face one is not to fight a dragon — it is to fight nature itself. They are called Shards because the old scholars believed each one was broken off from something greater, a primordial power too vast for any single creature to contain whole.</p>
+
+  <div class="grid-2">
+
+    <!-- FLAME -->
+    <div class="shard-card s-flame">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div class="shard-icon-circle" style="font-size:26px">🔥</div>
+        <div>
+          <div class="shard-name">Flame</div>
+          <div class="shard-domain" style="color:#f09575">Domain of Fire &amp; Heat</div>
+        </div>
+      </div>
+      <div class="shard-rule" style="background:#f09575"></div>
+      <div class="shard-section-label" style="color:#f09575">Core Ability</div>
+      <div class="shard-body">A Flame Shard can <strong>burst their entire body into living fire</strong> — not a coating, not an aura, but a full transformation into something between dragon and star. The flames they produce burn at temperatures so extreme they can <strong>melt any known metal on contact</strong>, including dragon-forged alloys that take centuries to smelt. Stone becomes liquid glass. Ice evaporates before it can get close.</div>
+      <div class="shard-section-label" style="color:#f09575">Extended Powers</div>
+      <div class="shard-body">Flame Shards can <strong>command fire from any source</strong> within a wide radius — campfires, lava vents, the heat of a forge — drawing them together into a weapon or shield. They are entirely fireproof, and prolonged proximity to other Shards causes their temperature to spike involuntarily. In battle, they are known to leave <strong>scorched glass footprints</strong> where they walk. The most powerful Flame Shards can ignite the air itself — not just set things aflame, but turn the atmosphere into a wave of burning pressure that knocks enemies flat before the fire even arrives.</div>
+      <div class="shard-rule" style="background:#f09575"></div>
+      <div class="shard-section-label" style="color:#f09575">Weakness</div>
+      <div class="shard-body" style="margin-bottom:0">Extinguished by the Sea Shard — water and ice can suppress their flames, though a Flame Shard at full power fights back. In enough water, they become temporarily powerless. Wind can also scatter their fire if the Shard is unprepared, though it can be just as easily redirected back as a firestorm.</div>
+    </div>
+
+    <!-- SEA -->
+    <div class="shard-card s-sea">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div class="shard-icon-circle" style="font-size:26px">🌊</div>
+        <div>
+          <div class="shard-name">Sea</div>
+          <div class="shard-domain" style="color:#85b7eb">Domain of Water &amp; Ice</div>
+        </div>
+      </div>
+      <div class="shard-rule" style="background:#85b7eb"></div>
+      <div class="shard-section-label" style="color:#85b7eb">Core Ability</div>
+      <div class="shard-body">Sea Shards command water in every form it takes — liquid, ice, and steam. They can <strong>call water from the air itself</strong>, pulling moisture from clouds or even dry stone when desperate. Their senses are so precisely attuned to water that they can <strong>detect any source within miles</strong>, hearing underground rivers, sensing rainfall before clouds appear, finding hidden pools beneath desert rock. What they find, they can control.</div>
+      <div class="shard-section-label" style="color:#85b7eb">Extended Powers</div>
+      <div class="shard-body">They can <strong>freeze water instantly</strong> — turning a river into a wall, a wave into a cage, rain into a hail of razor-sharp ice shards. Advanced Sea Shards can freeze an enemy mid-motion by drawing the moisture from the air around them and solidifying it into a prison. They breathe underwater indefinitely. Their scales are impervious to drowning, pressure, and temperature extremes in water. Most terrifyingly, they can sense the water content of living things — and some have learned to use this knowledge in ways that are not recorded in public files.</div>
+      <div class="shard-rule" style="background:#85b7eb"></div>
+      <div class="shard-section-label" style="color:#85b7eb">Weakness</div>
+      <div class="shard-body" style="margin-bottom:0">Countered by the Flame Shard's extreme heat, which can evaporate their water constructs faster than they can remake them. Wind can disrupt their wave-form attacks by scattering water into useless droplets. Crystal Shards can also partially contain them by pulling water down into earth.</div>
+    </div>
+
+    <!-- MOON -->
+    <div class="shard-card s-moon">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div class="shard-icon-circle" style="font-size:26px">🌑</div>
+        <div>
+          <div class="shard-name">Moon</div>
+          <div class="shard-domain" style="color:#b3a0ee">Domain of Darkness &amp; Perception</div>
+        </div>
+      </div>
+      <div class="shard-rule" style="background:#b3a0ee"></div>
+      <div class="shard-section-label" style="color:#b3a0ee">Core Ability</div>
+      <div class="shard-body">Moon Shards do not destroy — they <strong>unmake the ability to perceive</strong>. They can reach into an enemy's visual field and <strong>darken their sight completely</strong>, as if someone poured ink over the world. This lasts anywhere from seconds to minutes depending on the Moon Shard's strength and the victim's resistance. Worse, they can conjure <strong>spheres of pure, absolute darkness</strong> that expand outward like a held breath being released — swallowing areas whole, inside which nothing can be seen and sound behaves strangely.</div>
+      <div class="shard-section-label" style="color:#b3a0ee">Extended Powers</div>
+      <div class="shard-body">Moon Shards are connected to the lunar cycle. At the full moon, they are <strong>near-unstoppable</strong>. At a new moon, they are at their weakest. Beyond vision: they can <strong>muffle sound within their darkness zones</strong>, making communication between blinded enemies impossible. The most gifted Moon Shards have been recorded creating what scholars call a shadow self — a duplicate of themselves made from darkness that can move independently and confuse enemies during combat. They can see perfectly in any level of darkness and often hunt at night for this reason.</div>
+      <div class="shard-rule" style="background:#b3a0ee"></div>
+      <div class="shard-section-label" style="color:#b3a0ee">Weakness</div>
+      <div class="shard-body" style="margin-bottom:0">Directly opposed by the Sun Shard — a single focused burst of Sun light can shatter a Moon Shard's darkness sphere entirely. Galaxy Shards can counter them because they carry both sides of this power. Moon Shards operating in broad daylight are significantly weakened and tend to close combat quickly.</div>
+    </div>
+
+    <!-- CRYSTAL -->
+    <div class="shard-card s-crystal">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div class="shard-icon-circle" style="font-size:26px">💎</div>
+        <div>
+          <div class="shard-name">Crystal</div>
+          <div class="shard-domain" style="color:#3dd6c0">Domain of Earth &amp; Armour</div>
+        </div>
+      </div>
+      <div class="shard-rule" style="background:#3dd6c0"></div>
+      <div class="shard-section-label" style="color:#3dd6c0">Core Ability</div>
+      <div class="shard-body">Crystal Shards can <strong>manifest armour from nothing</strong> — pulling mineral matter from the earth, from stone underfoot, from the minerals dissolved in the very air, and forming it into seamless plates around themselves or an ally in seconds. This armour is not simple rock: it is <strong>crystalline, perfectly structured, harder than anything forged in a furnace</strong>. They can also command the earth itself — shift stone, raise walls, crack ground open.</div>
+      <div class="shard-section-label" style="color:#3dd6c0">Extended Powers</div>
+      <div class="shard-body">Advanced Crystal Shards can <strong>extend their armour outward</strong> into spikes, shields, and weapons — essentially wearing the battlefield itself as an extension of their body. They are notoriously difficult to kill because even if their armour shatters, they simply pull more. They can also <strong>sense structural weaknesses in anything solid</strong> — walls, armour on other dragons, natural formations — and know exactly where to strike to collapse them entirely. Some Crystal Shards have been recorded literally <strong>encasing opponents in crystal</strong>, freezing them mid-motion in a tomb of clear mineral.</div>
+      <div class="shard-rule" style="background:#3dd6c0"></div>
+      <div class="shard-section-label" style="color:#3dd6c0">Weakness</div>
+      <div class="shard-body" style="margin-bottom:0">Their armour, while extraordinary, has limits under enough sustained Flame heat — crystal can eventually crack and melt. Sea Shards can undermine the earth beneath them, removing their footing and supply. Wind Shards find crystal armour difficult to penetrate directly but can use sheer force to tip an armoured Crystal Shard off balance.</div>
+    </div>
+
+    <!-- WIND -->
+    <div class="shard-card s-wind">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div class="shard-icon-circle" style="font-size:26px">🌪</div>
+        <div>
+          <div class="shard-name">Wind</div>
+          <div class="shard-domain" style="color:#e8c96a">Domain of Air &amp; Motion</div>
+        </div>
+      </div>
+      <div class="shard-rule" style="background:#e8c96a"></div>
+      <div class="shard-section-label" style="color:#e8c96a">Core Ability</div>
+      <div class="shard-body">Wind Shards bend the air entirely to their will — from a gentle current capable of carrying a whisper miles away to a hurricane-force gale that levels forests. The wind is not just a weapon: it is <strong>a sixth sense</strong>. They can feel every disturbance in the air around them, detecting movement, approaching enemies, even reading emotional states through subtle changes in the air a creature exhales. <strong>They are almost impossible to ambush.</strong></div>
+      <div class="shard-section-label" style="color:#e8c96a">Extended Powers</div>
+      <div class="shard-body">Wind Shards can <strong>fly at speeds that blur their form</strong>, using air to launch themselves faster than most dragons can track. They can create localised vacuums — pockets where no air exists — which is as effective against fire as any water. They can <strong>redirect projectiles</strong> mid-flight, deflect other elemental attacks, and even strip the air from an enclosed area, which is as cruel as it sounds. Elite Wind Shards can create contained storms: vortexes that trap opponents, twisters that scour the ground, wind walls that deflect everything including sound.</div>
+      <div class="shard-rule" style="background:#e8c96a"></div>
+      <div class="shard-section-label" style="color:#e8c96a">Weakness</div>
+      <div class="shard-body" style="margin-bottom:0">Crystal Shards can anchor themselves and others against wind, using earth as a counter-weight. Sea Shards can flood an area, grounding a Wind Shard's aerial advantage and turning their hurricane into rain. Flame Shards can use a Wind Shard's own gusts against them — redirecting their currents as superheated firestorms.</div>
+    </div>
+
+    <!-- SUN -->
+    <div class="shard-card s-sun">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div class="shard-icon-circle" style="font-size:26px">☀️</div>
+        <div>
+          <div class="shard-name">Sun</div>
+          <div class="shard-domain" style="color:#fac775">Domain of Light &amp; Radiance</div>
+        </div>
+      </div>
+      <div class="shard-rule" style="background:#fac775"></div>
+      <div class="shard-section-label" style="color:#fac775">Core Ability</div>
+      <div class="shard-body">Sun Shards can <strong>unleash blinding flashes</strong> of concentrated light — not ordinary brightness, but focused photonic force that overwhelms the visual system entirely, leaving enemies sightless for minutes. They can also <strong>become a living beacon</strong>, radiating brilliant light visible from impossible distances — useful for signalling, for revealing hidden enemies, or simply for making it impossible to hide anything in their presence.</div>
+      <div class="shard-section-label" style="color:#fac775">Extended Powers</div>
+      <div class="shard-body">Sun Shards draw power from sunlight itself, making them grow <strong>dramatically stronger at midday and in open terrain</strong>. They can focus their light into a narrow beam of concentrated solar energy — essentially a laser capable of burning through stone. Advanced Sun Shards can <strong>maintain light constructs</strong>: walls of radiance that hurt to approach, illuminated illusions that distract and confuse, or sustained beacons that operate independently while they fight. Some scholars believe the most powerful Sun Shards can actually <strong>accelerate plant growth</strong> and reverse some forms of poison using their focused light.</div>
+      <div class="shard-rule" style="background:#fac775"></div>
+      <div class="shard-section-label" style="color:#fac775">Weakness</div>
+      <div class="shard-body" style="margin-bottom:0">Directly opposed by Moon Shards — their darkness spheres can absorb and nullify Sun Shard light. At night, a Sun Shard away from artificial light sources is severely weakened. Dense storm clouds (which a Sea or Wind Shard can produce) can cut off their solar power source mid-battle. They are also unable to use their light subtly — it is always visible, always announcing their location.</div>
+    </div>
+
+  </div>
+
+  <!-- GALAXY SPECIAL CARD -->
+  <div class="shard-card s-galaxy" style="margin-top:1.5rem">
+    <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap">
+      <div>
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+          <div class="shard-icon-circle" style="font-size:26px;width:60px;height:60px">✨</div>
+          <div>
+            <div class="shard-name" style="font-size:1.2rem">Galaxy</div>
+            <div class="shard-domain" style="color:#cbb8ff">Domain of All Light &amp; All Darkness — The Dual Shard</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem">
+          <span class="tag" style="background:rgba(143,119,221,.12);color:#b3a0ee;border:0.5px solid rgba(143,119,221,.3)">Moon Powers</span>
+          <span class="tag" style="background:rgba(239,159,39,.1);color:#fac775;border:0.5px solid rgba(239,159,39,.3)">Sun Powers</span>
+          <span class="tag" style="background:rgba(100,70,200,.15);color:#cbb8ff;border:0.5px solid rgba(180,140,255,.3)">Dual Domain</span>
+          <span class="tag" style="background:rgba(100,70,200,.15);color:#cbb8ff;border:0.5px solid rgba(180,140,255,.3)">Extremely Rare</span>
+          <span class="tag" style="background:rgba(216,90,48,.1);color:#f09575;border:0.5px solid rgba(216,90,48,.3)">Wanted</span>
+        </div>
+      </div>
+    </div>
+    <div class="shard-rule" style="background:#cbb8ff"></div>
+    <div class="shard-section-label" style="color:#cbb8ff">What Makes Them Different</div>
+    <div class="shard-body" style="color:var(--text-mid)">Galaxy Shards do not have one domain. They have two — and they are not simply half of each. A Galaxy Shard contains the <strong>full power of the Moon</strong> and the <strong>full power of the Sun</strong>, held simultaneously in one body. Old scholars believed this should be impossible — that light and dark would cancel each other out. Instead, they compound. A Galaxy Shard can flood a battlefield with blinding radiance, then snuff every light source in existence in the same breath.</div>
+    <div class="shard-section-label" style="color:#cbb8ff">Extended Powers</div>
+    <div class="shard-body" style="color:var(--text-mid)">Beyond the combined Moon and Sun abilities, Galaxy Shards develop something unique to their bloodline: <strong>spatial perception</strong>. Because they command both what can be seen and what cannot, they develop an awareness of the space between — the shapes of darkness, the angles of light. In practice this means they can <strong>detect cloaked or invisible things</strong> that even Moon Shards miss, track the path of light bending around obstacles, and in rare cases project both a blinding flash and an absolute darkness field at the same time to produce total sensory disorientation. The most advanced Galaxy Shards have been reported able to <strong>bend light around their own form</strong>, rendering themselves effectively invisible — not in darkness, but in plain sight.</div>
+    <div class="shard-section-label" style="color:#cbb8ff">Why They Are Hunted</div>
+    <div class="shard-body" style="color:var(--text-mid);margin-bottom:0">No other Shard can fully counter a Galaxy Shard. Moon Shards cannot use darkness against them — they share it. Sun Shards cannot blind them — they invented it. Their only meaningful weaknesses are the same as either parent domain in isolation, and a skilled Galaxy Shard rotates between powers fast enough that neither applies. This is why they are rare. It may also be why they are <strong>wanted</strong>.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE BALANCE -->
+<section class="section" id="balance">
+  <div class="section-title">The Great Balance</div>
+  <p class="section-intro">Nothing in the world of the Forbidden Scales exists without its opposite. Every power has a counter. Every strength has a mirror. The ancient scholars called it the Correspondence — the belief that the world maintains itself not through peace, but through opposition. When one Shard rises unchecked, another is pulled toward it like the tide. This is not a coincidence. It is a law.</p>
+
+  <!-- FIRE vs WATER -->
+  <div class="balance-pair">
+    <div class="balance-header">
+      <div class="balance-name" style="color:#f09575">Flame</div>
+      <div class="balance-vs">vs</div>
+      <div class="balance-name" style="color:#85b7eb">Sea</div>
+    </div>
+    <div class="balance-body">
+      The oldest opposition in the world. <strong style="color:#f09575">Flame</strong> burns at temperatures that can turn stone to glass — but <strong style="color:#85b7eb">Sea</strong> does not simply put fire out. A Sea Shard can freeze the very moisture in the air around a Flame Shard, cutting off the oxygen that feeds their fire, encasing them in ice before they can reach full temperature. Flame Shards at peak power can evaporate water faster than it can be replaced — but Sea Shards can call from the atmosphere itself, from underground rivers, from clouds miles away. The contest is not about which is hotter or colder. It is about <strong>which runs out first</strong>.<br><br>
+      Conversely: Flame Shards can melt a Sea Shard's ice constructs instantly, turn their water shields to scalding steam, and render rivers useless by boiling them dry. A Sea Shard fighting a Flame Shard is constantly choosing: <em>go bigger or go precise.</em>
+    </div>
+    <div class="balance-lore">"The sea does not fear the fire. The sea simply remembers that fire needs air — and the sea has drowned things before they could ever burn." — Old scholar's marginalia, volume unknown.</div>
+  </div>
+
+  <!-- LIGHT vs DARK -->
+  <div class="balance-pair">
+    <div class="balance-header">
+      <div class="balance-name" style="color:#fac775">Sun</div>
+      <div class="balance-vs">vs</div>
+      <div class="balance-name" style="color:#b3a0ee">Moon</div>
+    </div>
+    <div class="balance-body">
+      The most <em>personal</em> opposition. <strong style="color:#fac775">Sun</strong> and <strong style="color:#b3a0ee">Moon</strong> Shards do not simply cancel each other's powers — they unravel each other's <em>entire purpose</em>. A Moon Shard's darkness sphere, which can engulf a battlefield and leave armies stumbling blind, is shattered instantly by a single concentrated Sun burst. A Sun Shard's blinding flash — terrifying against every other enemy — washes harmlessly over a Moon Shard who sees perfectly in absolute dark.<br><br>
+      What makes this balance extraordinary is that neither side wins in isolation: in full daylight the Moon Shard is weakened; at night, the Sun Shard dims. They are calibrated against the world's own rhythm — and the only being that breaks this rule entirely is the <strong style="color:#cbb8ff">Galaxy Shard</strong>, who carries the burden of both. Galaxy Shards are not a balance of Sun and Moon. They are what happens when the balance <em>breaks</em> — and the world does not correct it.
+    </div>
+    <div class="balance-lore">"Light makes darkness visible. Darkness makes light meaningful. Take either away and you do not get more of the other — you get blindness of a different kind." — Recovered text, author unknown.</div>
+  </div>
+
+  <!-- WIND vs EARTH -->
+  <div class="balance-pair">
+    <div class="balance-header">
+      <div class="balance-name" style="color:#e8c96a">Wind</div>
+      <div class="balance-vs">vs</div>
+      <div class="balance-name" style="color:#3dd6c0">Crystal</div>
+    </div>
+    <div class="balance-body">
+      The opposition between the untethered and the immovable. <strong style="color:#e8c96a">Wind</strong> is formless, invisible, and omnipresent — it cannot be grabbed, held, or permanently blocked. <strong style="color:#3dd6c0">Crystal</strong> is the opposite: dense, permanent, built to endure. A Wind Shard can shatter a Crystal Shard's armour with enough sustained force — stone cracks under pressure if you find the right angle, and Crystal Shards can sense structural weaknesses in everything except air. But a Crystal Shard can anchor itself, drive spikes into the ground, and become impossible to lift, topple, or throw — which is how a Wind Shard prefers to fight.<br><br>
+      The tension in this pairing is <strong>mobility vs durability</strong>. Wind Shards are fastest. Crystal Shards are most protected. In a long fight, Crystal wins. In a fast fight, Wind wins. This is why Wind Shards never let a fight go long.
+    </div>
+    <div class="balance-lore">"The mountain does not chase the wind. It does not need to. It is still standing when every storm has passed." — Crystal Shard battle philosophy, traditional.</div>
+  </div>
+
+  <!-- THE FULL WHEEL -->
+  <div style="background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:2rem;margin-top:1.5rem">
+    <div style="font-family:'Cinzel Decorative',serif;font-size:10px;letter-spacing:.2em;color:var(--gold-dim);margin-bottom:1rem">The Correspondence — Full Wheel</div>
+    <div style="font-size:14.5px;color:var(--text-mid);line-height:1.8;margin-bottom:1.5rem">
+      The six base Shards form what old scholars called the Wheel of Correspondence — no single point has no counter, and no two adjacent powers are without tension between them. <br><br>
+      <strong style="color:#f09575">Flame</strong> suppresses <strong style="color:#85b7eb">Sea</strong> · <strong style="color:#85b7eb">Sea</strong> suppresses <strong style="color:#f09575">Flame</strong><br>
+      <strong style="color:#fac775">Sun</strong> suppresses <strong style="color:#b3a0ee">Moon</strong> · <strong style="color:#b3a0ee">Moon</strong> suppresses <strong style="color:#fac775">Sun</strong><br>
+      <strong style="color:#e8c96a">Wind</strong> challenges <strong style="color:#3dd6c0">Crystal</strong> · <strong style="color:#3dd6c0">Crystal</strong> challenges <strong style="color:#e8c96a">Wind</strong><br><br>
+      But the wheel also turns across pairs: <strong style="color:#f09575">Flame</strong> and <strong style="color:#e8c96a">Wind</strong> compound — fire feeds on air, wind spreads flame into an inferno. <strong style="color:#85b7eb">Sea</strong> and <strong style="color:#3dd6c0">Crystal</strong> reinforce — water carves channels in earth, and the earth holds water in place. <strong style="color:#fac775">Sun</strong> and <strong style="color:#f09575">Flame</strong> share warmth — neither harms the other, and together they are relentless. <strong style="color:#b3a0ee">Moon</strong> and <strong style="color:#85b7eb">Sea</strong> share tides — Sea Shards near Moon Shards report increased range and sensitivity.
+    </div>
+    <div style="font-family:'Cinzel Decorative',serif;font-size:10px;letter-spacing:.2em;color:var(--gold-dim);margin-bottom:1rem">The Galaxy Exception</div>
+    <div style="font-size:14.5px;color:var(--text-mid);line-height:1.8">
+      The <strong style="color:#cbb8ff">Galaxy Shard</strong> sits outside the Wheel entirely. Scholars originally placed it at the centre — commanding both light and dark, it seemed like a mediator, a balance-keeper. The more recent theory is grimmer: the Galaxy Shard does not maintain balance. It is what happens when balance is absent. Every century or so, when the Wheel tips badly — when one Shard bloodline grows too strong, or another is nearly wiped out — a Galaxy Shard appears. Not as a ruler. As a <strong style="color:#cbb8ff">correction</strong>. Whether this is comforting or terrifying depends on which side of the imbalance you are standing on.
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXCERPTS -->
+<section class="section" id="excerpts">
+  <div class="section-title">Reading Excerpts</div>
+  <p class="section-intro">Scenes from the manuscript — windows into the world of the Forbidden Scales as it exists on the page.</p>
+
+  <div class="excerpt-box">
+    <div class="excerpt-label">Talon's Chapter — Aquamarine</div>
+    <div class="excerpt-text">"I'm so sorry," he whispered. "It's okay," she sighed, smiling at him. From then on, she was basically his new sister. Even though they couldn't spend a lot of time together, every night, they slept in rooms next to each other.</div>
+  </div>
+
+  <div class="excerpt-box">
+    <div class="excerpt-label">A Bit of Ky — Topaz at the Stream</div>
+    <div class="excerpt-text">"Please," Ky begged. "Come back. What do I tell Agate?" Topaz's glare faltered for a moment, but came back more ferocious than ever... "Yes," Ky repeated. "I'm going to convin — try to convince you to stay." Topaz snorted, but the ShardScale could see something in his eye. Was it pity? Confusion? Was he giving him a chance? "Go on," he said, slowly.</div>
+  </div>
+
+  <div class="excerpt-box">
+    <div class="excerpt-label">The Ascension of Friendship</div>
+    <div class="excerpt-text">"Listen, Ky," Talon said, looking him in the eye. "It's not about you. Now, I care for you like a brother. You've ascended to the higher rank of friendship." "That's so — Thank you," he said instead. "You incredibly wonderful but shy dragon," he laughed. "Of course I wouldn't forget about you!"</div>
+  </div>
+
+  <div class="excerpt-box">
+    <div class="excerpt-label">Agate & Topaz — The Beach</div>
+    <div class="excerpt-text">"You know what?" she asked. "What?" he said. "No matter what happens, I'm sure that I will stay your friend." And with that, they drifted off to sleep.</div>
+  </div>
+
+  <div class="excerpt-box">
+    <div class="excerpt-label">The Great Coast Incident</div>
+    <div class="excerpt-text">"NO ONE HURTS PALM AND GETS AWAY WITH IT!" she roared at all of them. She jumped back into the melee, attacking and protecting Palm at the same time.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WOLF PACK -->
+<section class="section" id="wolves">
+  <div class="section-title">The Wolf Pack</div>
+  <p class="section-intro">The Red Wolf pack — 28 strong, led by Fang and Storm. Bonded to the dragon companions through ancient instinct and hard-won trust. Not pets. Not soldiers. Partners.</p>
+
+  <div style="background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:2rem">
+    <div class="lore-label">Fang — Alpha Male</div>
+    <div style="font-size:14.5px;color:var(--text-mid);line-height:1.7">Blue-coated wolf. Dark gold eyes with orange-red flecks. Silver claws, silver-tipped tail. Vegan — loves berries, sugarcane, and vegetables. Can run at the speed of sound for 5,000 miles before slowing. Can sense Topaz's location at any distance and detect any animal within a 10-mile radius. Can growl dragon-like words. Former Alpha of the Red Wolves — his leadership is both earned and absolute. Has photographic memory. Can appear to teleport when moving side to side at full speed. Can call his entire pack across the continent with a single howl.</div>
+  </div>
+
+  <div class="grid-3">
+    <div class="wolf-card">
+      <div class="wolf-name">Freki</div>
+      <div class="wolf-role">Main Healer</div>
+      <div class="wolf-desc">Dusky blue and silver coat, white underbelly, dusky red ear tips. Deeply loyal to Storm. Loves herbs, pups, and rolling in snow. Photographic memory for plants. Can vaguely speak Dragon. Can run 35–40 mph for 450 miles. Will fight for her pack if she must.</div>
+    </div>
+    <div class="wolf-card">
+      <div class="wolf-name">Echo</div>
+      <div class="wolf-role">Head of Defense</div>
+      <div class="wolf-desc">Silky red fur, black splotches, deep piercing black eyes. Strong and confident — many respect her, others fear her. Loud howl, exceptional stealth. Loyal to Fang above all. Not trusting of strangers, but follows orders without complaint.</div>
+    </div>
+    <div class="wolf-card">
+      <div class="wolf-name">Chair</div>
+      <div class="wolf-role">Scout Leader</div>
+      <div class="wolf-desc">Whitish-red fur, maroon splotches. Serious to a fault, despises pups, bossy and prone to snapping. In his free time he sits lazily — which is, in fact, exactly why he is named Chair. He trusts his scouts. He just doesn't act like it.</div>
+    </div>
+    <div class="wolf-card">
+      <div class="wolf-name">Bolt</div>
+      <div class="wolf-role">Gatherer Leader</div>
+      <div class="wolf-desc">Red-tinted green fur, brownish-maroon underbelly, leaf-shaped brown markings. Extremely fast and resourceful. Prefers solitude but has a genuine soft spot for Hail. Has anger issues. Dislikes loud noises and sudden movements — they make him lash out.</div>
+    </div>
+    <div class="wolf-card">
+      <div class="wolf-name">Aspen</div>
+      <div class="wolf-role">Hunter Leader</div>
+      <div class="wolf-desc">Bright red fur, black underbelly, heterochromia — brown left eye, yellow right. Kind but results-driven. Hates procrastination. Likes Kodiak. Gets along with healers and caretakers. In her free time she carves wood into small wolf figures.</div>
+    </div>
+    <div class="wolf-card">
+      <div class="wolf-name">Hail</div>
+      <div class="wolf-role">Caretaker Leader</div>
+      <div class="wolf-desc">Light blue fur with red flecks, deep golden-brown eyes, silver-tipped tail, retractable teal claws. Protective beyond reason, incredibly smart. Fang wants her as a scout. She wants to be with the pups. Specifically Taco, who only listens to her.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPANIONS -->
+<section class="section" id="companions">
+  <div class="section-title">Companions &amp; Familiars</div>
+  <p class="section-intro">Not every bond is between dragons. Some of the deepest connections in this story are between a dragon and the smaller, stranger creature that chose them.</p>
+  <div class="grid-3">
+    <div class="pet-card">
+      <div class="pet-name">Saiber</div>
+      <div class="pet-owner">Elina's companion · Male peregrine falcon</div>
+      <div class="pet-desc">Grayish-blue head, brown and white wings. Black eyes with shadowed golden irises — he looks permanently unimpressed by everything. Loves strawberries and marshmallows. Non-mythical, but has the attitude of something much larger.</div>
+    </div>
+    <div class="pet-card">
+      <div class="pet-name">Dyno</div>
+      <div class="pet-owner">Raven's companion · Male hawk</div>
+      <div class="pet-desc">A hawk with an enormous personality relative to his size. Loves blueberries. Is, by all documented accounts, a narcissist. Non-mythical — though Dyno himself may dispute this classification.</div>
+    </div>
+    
+    <div class="pet-card">
+      <div class="pet-name">Storm</div>
+      <div class="pet-owner">Varsha's companion · Female Alpha wolf</div>
+      <div class="pet-desc">Arctic-Red hybrid. White coat with blue specks and red features. Red eyes. Top speed 250 mph — currently 40 mph while healing from a paw injury. Excellent hunter, fiercely loyal. She and Ash understand each other without words. Mate of Fang.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LORE -->
+<section class="section" id="lore">
+  <div class="section-title">World &amp; Lore</div>
+  <div class="grid-2">
+    <div class="lore-box">
+      <div class="lore-label">Story Order — Character Arc Sequence</div>
+      <div style="font-size:14px;color:var(--text-dim)">The planned order of POV focus across the series:</div>
+      <div class="order-pills">
+        <span class="order-pill">Eclipse</span><span class="order-arrow">→</span>
+        <span class="order-pill">Ky</span><span class="order-arrow">→</span>
+        <span class="order-pill">Topaz</span><span class="order-arrow">→</span>
+        <span class="order-pill">Talon</span><span class="order-arrow">→</span>
+        <span class="order-pill">Twilight</span><span class="order-arrow">→</span>
+        <span class="order-pill">Agate</span><span class="order-arrow">→</span>
+        <span class="order-pill">Ash</span>
+      </div>
+    </div>
+    <div class="lore-box">
+      <div class="lore-label">Books in the Series</div>
+      <div class="book-pills">
+        <span class="book-pill">Book 1</span><span class="book-pill">Book 2</span><span class="book-pill">Book 3</span>
+        <span class="book-pill">Book 4</span><span class="book-pill">Book 5</span><span class="book-pill">Book 6</span>
+        <span class="book-pill">Book 7</span><span class="book-pill">Book 8</span><span class="book-pill">Book 9</span>
+        <span class="book-pill">Book 10</span><span class="book-pill">Saiber's Story</span>
+        <span class="book-pill">Dyno's Story</span><span class="book-pill">A Quartet</span>
+        <span class="book-pill">Special Edition</span>
+      </div>
+    </div>
+    <div class="lore-box">
+      <div class="lore-label">World Rules — The Law of the Scales</div>
+      <ul class="rules-list">
+        <li>No omnipotent characters — Eclipse is the exception, and Eclipse still has consequences</li>
+        <li>No magic of the Animus or all-powerful type</li>
+        <li>No mythical beings except dragons</li>
+        <li>All characters must fit established body limits for their Shard type</li>
+        <li>Every chapter must be at least 4 pages — no exceptions</li>
+        <li>Pets remain companions — they do not become the main characters</li>
+      </ul>
+    </div>
+    <div class="lore-box">
+      <div class="lore-label">Department Heads</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2">
+        <strong style="color:var(--text)">Elina</strong> — Art, Co-Marketing, Co-Original Book<br>
+        <strong style="color:var(--text)">Daniel</strong> — Tech, Websites, Co-Marketing<br>
+        <strong style="color:var(--text)">Raven</strong> — Co-Marketing, Co-Original Book<br>
+        <strong style="color:var(--text)">Varsha</strong> — Editing, Co-Publishing, Co-Marketing<br>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="section" id="team">
+  <div class="section-title">The Authors</div>
+  <p class="section-intro">Four writers. One world. The Forbidden Scales is built and maintained collaboratively — each author owns their dragon, their companion, and their corner of the story.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem">
+    <div class="team-card"><div class="team-avatar">E</div><div class="team-name">Elina Yoon</div><div class="team-role">Co-Head of Marketing · Head of Art · Co-Head of Original Book</div></div>
+    <div class="team-card"><div class="team-avatar">D</div><div class="team-name">Daniel Lim</div><div class="team-role">Head of Tech · Co-Head of Marketing · Head of Websites</div></div>
+    <div class="team-card"><div class="team-avatar">R</div><div class="team-name">Raven Taylor</div><div class="team-role">Co-Head of Marketing · Co-Head of Original Book</div></div>
+    <div class="team-card"><div class="team-avatar">V</div><div class="team-name">Varsha Gangu</div><div class="team-role">Co-Head of Marketing · Head of Editing · Co-Head of Publishing</div></div>
+    
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-title">Contact the Team</div>
+  <p class="section-intro">Reach out to any of the authors directly. For general inquiries, any team member can help.</p>
+  <div class="contact-block">
+    <div class="contact-row"><div class="contact-init">E</div><div><div class="contact-name">Elina Yoon</div><div class="contact-detail">elinayoonny@gmail.com</div></div></div>
+    <div class="contact-row"><div class="contact-init">D</div><div><div class="contact-name">Daniel Lim</div><div class="contact-detail">danielwonillim@gmail.com · (646) 483-9001</div></div></div>
+    <div class="contact-row"><div class="contact-init">R</div><div><div class="contact-name">Raven Taylor</div><div class="contact-detail">taylorr@gmail.com</div></div></div>
+    <div class="contact-row"><div class="contact-init">V</div><div><div class="contact-name">Varsha Gangu</div><div class="contact-detail">ivarshagangu@gmail.com</div></div></div>
+    
+  </div>
+</section>
+
+<footer>
+  The Forbidden Scales · Official Records Site<br>
+  Maintained by Elina Yoon · Daniel Lim · Raven Taylor · Varsha Gangu<br>
+  All content belongs to its respective authors
+</footer>
+
+</body>
+</html>
